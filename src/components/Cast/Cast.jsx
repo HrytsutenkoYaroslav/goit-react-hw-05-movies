@@ -11,42 +11,42 @@ import {
 } from './Cast.styled';
 
 const Cast = () => {
-  const { movieId } = useParams(); // Отримуємо параметри шляху з URL
-  const [castList, setCastList] = useState([]); // Стан для збереження списку акторів
+  const { movieId } = useParams();
+  const [castList, setCastList] = useState([]);
 
   useEffect(() => {
     const fetchCast = async () => {
       try {
-        const { cast } = await fetchMovieCast(movieId); // Виклик функції для отримання списку акторів
-        setCastList(cast); // Збереження списку акторів у стані
+        const { cast } = await fetchMovieCast(movieId);
+        setCastList(cast);
       } catch (error) {
-        console.log(error); // Обробка помилок
+        console.log(error);
       }
     };
-    fetchCast(); // Виклик функції отримання списку акторів при завантаженні компонента та зміні movieId
+    fetchCast();
   }, [movieId]);
 
   return (
     <Wrapper>
-      <CastHeader>Cast</CastHeader> {/* Заголовок компонента */}
+      <CastHeader>Cast</CastHeader> {}
       <CastList>
         {castList.map(actor => (
           <CastListItem key={actor.id}>
-            {actor.profile_path ? ( // Перевірка наявності постера актора
+            {actor.profile_path ? (
               <img
-                src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`} // URL постера актора
+                src={`https://image.tmdb.org/t/p/w200${actor.profile_path}`}
                 alt={`${actor.name} profile`}
               />
             ) : (
               <img
-                src={`https://via.placeholder.com/200x300?text=No+Image`} // Замінний URL постера
+                src={`https://via.placeholder.com/200x300?text=No+Image`}
                 alt={`${actor.name} profile`}
               />
             )}
             <CastInfo>
-              <CastName>{actor.name}</CastName> {/* Виведення імені актора */}
+              <CastName>{actor.name}</CastName> {}
               <p>Character: {actor.character}</p>{' '}
-              {/* Виведення персонажа актора */}
+              {}
             </CastInfo>
           </CastListItem>
         ))}

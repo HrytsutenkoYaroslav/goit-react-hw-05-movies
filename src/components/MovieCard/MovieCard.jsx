@@ -51,7 +51,7 @@ const MovieCard = ({ movie }) => {
             <MovieInfoTextBold>Overview:</MovieInfoTextBold> {overview}
           </MovieInfoText>
 
-          {/* додаємо перевірку на наявність жанрів */}
+          {}
           {genres && genres.length > 0 && (
             <MovieInfoText>
               <MovieInfoTextBold>Genres:</MovieInfoTextBold>

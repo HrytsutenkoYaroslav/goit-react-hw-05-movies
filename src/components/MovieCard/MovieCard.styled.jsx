@@ -66,13 +66,13 @@ export const StyledLink = styled(Link)`
   padding: 5px 15px;
   border: none;
   border-radius: 30px;
-  background-color: #f76c6c;
+  background-color: #833ab4;
   color: #ffffff;
   text-decoration: none;
   transition: background-color 0.2s ease-in-out;
 
   &:hover,
   &:focus {
-    background-color: #f94141;
+    background-color: #e20707;
   }
 `;

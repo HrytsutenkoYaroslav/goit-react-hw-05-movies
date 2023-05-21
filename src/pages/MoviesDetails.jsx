@@ -10,30 +10,30 @@ import MovieCard from 'components/MovieCard/MovieCard';
 const MoviesItem = () => {
   const { movieId } = useParams();
   const location = useLocation();
-  const [selectedMovie, setSelectedMovie] = useState(null); // Ініціалізація значення selectedMovie як null
+  const [selectedMovie, setSelectedMovie] = useState(null);
 
   useEffect(() => {
     const fetchSelectedMovie = async movieId => {
       try {
         const movieData = await fetchMovieById(movieId);
-        setSelectedMovie(movieData); // Оновлення значення selectedMovie після завантаження даних про фільм
+        setSelectedMovie(movieData);
       } catch (error) {
         console.log(error);
       }
     };
 
-    fetchSelectedMovie(movieId); // Виклик функції fetchSelectedMovie для завантаження даних про фільм
+    fetchSelectedMovie(movieId);
   }, [movieId]);
 
   if (!selectedMovie) {
-    // Рендерінг індикатора завантаження, поки дані про фільм не завантажено
+
     return <LoadingIndicator />;
   }
 
   return (
     <main>
       <Container>
-        {/* Кнопка "Назад" */}
+        {}
         <Link
           to={location?.state?.from ?? '/'}
           style={{ textDecoration: 'none' }}
@@ -45,10 +45,10 @@ const MoviesItem = () => {
             Go back
           </Button>
         </Link>
-        {/* Компонент MovieCard для відображення вибраного фільму */}
+        {}
         <MovieCard movie={selectedMovie} />
         <Suspense fallback={<LoadingIndicator />}>
-          <Outlet /> {/* Відображення вкладених маршрутів */}
+          <Outlet /> {}
         </Suspense>
       </Container>
     </main>

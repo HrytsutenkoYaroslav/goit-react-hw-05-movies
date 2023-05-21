@@ -1,32 +1,32 @@
 import React, { useEffect, useState } from 'react';
 import { fetchTrendMovies } from 'services/api';
-import LoadingIndicator from 'components/Layout/LoadingIndicator'; // Імпорт компонента LoadingIndicator
-import MovieList from 'components/MovieList/MovieList'; // Імпорт компонента MovieList
+import LoadingIndicator from 'components/Layout/LoadingIndicator';
+import MovieList from 'components/MovieList/MovieList';
 
 const Home = () => {
-  const [trendingMovies, setTrendingMovies] = useState([]); // Ініціалізація стану для списку трендових фільмів
-  const [isLoading, setIsLoading] = useState(true); // Ініціалізація стану для відображення індикатора завантаження
-  const [error, setError] = useState(false); // Ініціалізація стану для відображення повідомлення про помилку
+  const [trendingMovies, setTrendingMovies] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
     const fetchTrendingMovies = async () => {
       try {
         const { results } = await fetchTrendMovies();
-        setTrendingMovies(results); // Запис результатів отриманих даних в стан trendingMovies
+        setTrendingMovies(results);
       } catch (error) {
-        setError(true); // Встановлення стану помилки при невдалому запиті
+        setError(true); 
       } finally {
-        setIsLoading(false); // Встановлення стану завершення завантаження
+        setIsLoading(false);
       }
     };
 
-    fetchTrendingMovies(); // Виклик функції для завантаження трендових фільмів
+    fetchTrendingMovies();
   }, []);
 
   return (
     <>
       {isLoading && <LoadingIndicator />}
-      {/* Відображення індикатора завантаження, якщо дані ще завантажуються */}
+      {}
       {error ? (
         <p>
           Sorry, we could not fetch the trending movies. Please try again later.
@@ -34,7 +34,7 @@ const Home = () => {
       ) : (
         <MovieList trendingMovies={trendingMovies} />
       )}
-      {/* Відображення списку трендових фільмів */}
+
     </>
   );
 };

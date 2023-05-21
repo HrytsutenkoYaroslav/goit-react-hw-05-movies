@@ -9,7 +9,7 @@ export const GlobalStyle = createGlobalStyle`
       sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #f5f5f5;
+    background-color: #c1c6c8;
   }
 
   code {
@@ -33,5 +33,5 @@ export const GlobalStyle = createGlobalStyle`
     list-style: none;
   }
 
- 
+
 `;

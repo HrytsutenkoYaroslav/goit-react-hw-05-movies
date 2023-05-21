@@ -12,20 +12,20 @@ import {
 } from './Reviews.styled';
 
 const Reviews = () => {
-  const { movieId } = useParams(); // Отримання значення параметра movieId з URL
-  const [reviews, setReviews] = useState([]); // Ініціалізація стану reviews, що містить відгуки про фільм
+  const { movieId } = useParams();
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     const fetchReviews = async () => {
       try {
-        const { results } = await fetchMovieReviews(movieId); // Отримання відгуків про фільм за допомогою функції fetchMovieReviews
-        setReviews(results); // Оновлення стану reviews з отриманими відгуками
+        const { results } = await fetchMovieReviews(movieId);
+        setReviews(results);
       } catch (error) {
-        console.log(error); // Виведення помилки у випадку невдалого запиту
+        console.log(error);
       }
     };
 
-    fetchReviews(); // Виклик функції для отримання відгуків про фільм при завантаженні компонента або зміні значення movieId
+    fetchReviews(); 
   }, [movieId]);
 
   return (

@@ -13,7 +13,7 @@ export const StyledNavLink = styled(NavLink)`
   font-weight: 500;
   text-decoration: none;
   transition: color 0.2s ease-in-out;
-  color: #000000;
+  color: #833ab4;
 
   &:not(:last-child) {
     margin-right: 40px;
@@ -49,7 +49,7 @@ export const Dot = styled.div`
   height: 20px;
   margin-right: 10px;
   border-radius: 50%;
-  background-color: #e23838;
+  background-color: #c1c6c8;
   animation: ${bounce} 1s infinite ease-in-out;
   animation-delay: ${({ delay }) => delay};
 `;

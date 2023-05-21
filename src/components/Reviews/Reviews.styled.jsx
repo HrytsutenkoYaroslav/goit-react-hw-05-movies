@@ -22,7 +22,7 @@ export const ReviewList = styled.ul`
 
 export const ReviewListItem = styled.li`
   padding-bottom: 10px;
-  border-bottom: 1px solid #d3d3d3;
+  border-bottom: 1px solid #833ab4;
   width: 100%;
 `;
 
@@ -41,7 +41,7 @@ export const NoReviewsText = styled.p`
   margin: 30px auto 0 auto;
   text-align: center;
   padding: 20px;
-  background-color: #f8f8f8;
+  background-color: #833ab4;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   max-width: 500px;
